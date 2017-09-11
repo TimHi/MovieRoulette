@@ -1,4 +1,7 @@
 body {
+  background-color: black;
+  background-image: url("tiffany.jpg");
+  background-color: #cccccc;
   margin: 0;
 }
 /* Add a black background color to the top navigation */
@@ -36,6 +39,7 @@ body {
     width: 50%;
     padding: 10px;
     font-family: 'Amaranth';
+    color: #f2f2f2;
     display:none;
 }
 
