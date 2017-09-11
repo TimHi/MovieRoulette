@@ -6,6 +6,7 @@ function sendRequest(reqURL){
 }
 
 function getTotalPages(){
+  console.log("Getting Pages");
   var totalPageURL = 'https://api.themoviedb.org/3/discover/movie?api_key=afe4e10abbb804e2b4a4f8a3ef067ad5&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_count.gte=100&with_runtime.gte=30&callback=setTotalPages';
   sendRequest(totalPageURL);
 }
@@ -18,6 +19,11 @@ function setTotalPages(response){
 function displayMovie(response) {
   var movieIndex = Math.floor((Math.random() * 19) + 0);
   var movieDetails = response.results[movieIndex];
+  document.getElementById("searchButton").style.display = "none";
+  var movieIndex = Math.floor((Math.random() * 19) + 0);
+  var movieDetails = response.results[movieIndex];
+  console.log("Displaying");
+  console.log(movieDetails);
   var image = document.createElement("img");
   var poster = "https://image.tmdb.org/t/p/w640" + movieDetails.poster_path;
   image.setAttribute("height", "540");
@@ -28,9 +34,9 @@ function displayMovie(response) {
   document.getElementById('MovieOutput').style.display = "block";
   document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML="<br>";
   document.getElementById('MovieOutput').innerHTML +=movieDetails.original_title;
-  if(movieDetails.tagline != undefined){
+  if(movieDetails.overview != undefined){
   document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML="<br>";
-  document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML=movieDetails.tagline;
+  document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML=movieDetails.overview;
   }
   if(movieDetails.release_date != undefined){
   document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML="<br>";
@@ -46,6 +52,7 @@ function displayMovie(response) {
 
 function getRandomMovie() {
   var pageIndex = Math.floor((Math.random() * totalPages) + 1);
+  console.log("Sending");
   var getMovieURL = 'https://api.themoviedb.org/3/discover/movie?api_key=afe4e10abbb804e2b4a4f8a3ef067ad5&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=' + pageIndex + '&vote_count.gte=100&with_runtime.gte=30&callback=displayMovie';
   sendRequest(getMovieURL);
 }
