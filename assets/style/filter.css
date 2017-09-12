@@ -1,0 +1,85 @@
+html {
+  background: url("../images/tiffany.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Amaranth';
+  color: #f2f2f2;
+  background-color: #cccccc;
+  margin: 0;
+}
+
+
+/* Add a black background color to the top navigation */
+
+.topnavmainmain {
+  background-color: blue;
+  overflow: hidden;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.topnavmain a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+/* Change the color of links on hover */
+
+.topnavmain a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* Add a color to the active/current link */
+
+.topnavmain a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.MovieShowcase {
+  font-size: 17px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  margin-left: 30%;
+  margin-top: 5%;
+  border: 2px solid white;
+  width: 20%;
+  padding: 10px;
+  display: none;
+  background: linear-gradient( rgba(94, 94, 94, 0.6), rgba(94, 94, 94, 0.7));
+}
+
+.MovieShowcase a {
+  font-size: 18px;
+  color: #f2f2f2;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#searchButton a {
+  font-size: 72px;
+  color: #f2f2f2;
+  display: block;
+  position: absolute;
+  margin-left: 45%;
+  margin-top: 20%;
+  border-radius: 25px;
+  border: 2px solid #f2f2f2;
+  padding: 20px;
+}

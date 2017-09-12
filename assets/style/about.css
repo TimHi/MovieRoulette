@@ -1,0 +1,48 @@
+html {
+  background: url("../images/tiffany.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Amaranth';
+  color: #f2f2f2;
+  background-color: #cccccc;
+  margin: 0;
+}
+
+
+/* Add a black background color to the top navigation */
+
+.topnavmainmain {
+  background-color: blue;
+  overflow: hidden;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.topnavmain a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+/* Change the color of links on hover */
+
+.topnavmain a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* Add a color to the active/current link */
+
+.topnavmain a.active {
+  background-color: #4CAF50;
+  color: white;
+}
