@@ -1,5 +1,7 @@
 body {
   background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-image: url("tiffany.jpg");
   font-family: 'Amaranth';
   color: #f2f2f2;
