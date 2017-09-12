@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="What to watch?">
-    <meta name="author" content="TimHi">
-    <link href="assets/main.css" rel="stylesheet">
-    <link rel="icon" href="assets/icon.png">
-    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
-    <title>Movie Roulette</title>
-    <script type='text/javascript' src='assets/movieController.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What to watch?">
+  <meta name="author" content="TimHi">
+  <link href="assets/style/main.css" rel="stylesheet">
+  <link rel="icon" href="assets/icon.png">
+  <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+  <title>Movie Roulette</title>
+  <script type='text/javascript' src='assets/scripts/movieController.js'></script>
 </head>
 
 <body onload="getTotalPages()">
-<div class="topnavmain" id="topnav">
- <a href="#home">Home</a>
- <a href="#contact">Contact</a>
- <a href="#about">About</a>
-</div>
+  <div class="topnavmain" id="topnav">
+    <a href="index.html">Home</a>
+    <a href="filter/index.html">Filter</a>
+    <a href="about/index.html">About</a>
+  </div>
 
   <div id="MovieOutput" class="MovieShowcase">
   </div>
   <div id="searchButton">
-  <a href="#" onclick="getRandomMovie();"> Start</a>
-</div>
+    <a href="#" onclick="getRandomMovie();"> Start</a>
+  </div>
 </body>
