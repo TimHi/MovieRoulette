@@ -1,5 +1,5 @@
 html {
-  background: url("../images/tiffany.jpg") no-repeat center center fixed;
+  background: url("../images/city.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -10,16 +10,31 @@ html {
   margin: 0;
 }
 
+#aboutText{
+  position: absolute;
+  background: linear-gradient( rgba(94, 94, 94, 0.6), rgba(94,      94, 94, 0.7));
+  margin-left: 10%;
+  margin-top: 10%;
+padding: 10px;
+border: 2px solid white;
+}
 
-/* Add a black background color to the top navigation */
-
+#aboutText a{
+color: #f2f2f2;
+}
 .topnavmainmain {
   background-color: blue;
   overflow: hidden;
 }
 
-
-/* Style the links inside the navigation bar */
+#aboutImage {
+  position: absolute;
+  background: linear-gradient( rgba(94, 94, 94, 0.6), rgba(94,      94, 94, 0.7));
+  margin-left: 60%;
+  margin-top: 6%;
+padding: 10px;
+border: 2px solid white;
+}
 
 .topnavmain a {
   float: left;
@@ -31,16 +46,10 @@ html {
   font-size: 17px;
 }
 
-
-/* Change the color of links on hover */
-
 .topnavmain a:hover {
   background-color: #ddd;
   color: black;
 }
-
-
-/* Add a color to the active/current link */
 
 .topnavmain a.active {
   background-color: #4CAF50;

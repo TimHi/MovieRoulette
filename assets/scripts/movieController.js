@@ -50,10 +50,11 @@ function displayMovie(response) {
     document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = "<br>";
   }
   if (movieDetails.release_date != undefined) {
-    var releaseDateString = "<i>" + movieDetails.release_date + "<br></i>";
+    var releaseDateString = "<i>Release Date: " + movieDetails.release_date + "<br></i>";
     document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = releaseDateString;
   }
-  document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = movieDetails.runtime;
+var runtimeString = "Runtime: " + movieDetails.runtime + " Minutes";
+document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = runtimeString;
   document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = "<br>";
   document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = "<a href='#' onclick='getRandomMovie();'> Another?</a> | <a href='" + tmdburl + "'>" + "TheMovieDB </a>";
 }
