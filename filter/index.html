@@ -10,7 +10,7 @@
   <link rel="icon" href="assets/icon.png">
   <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
   <title>Movie Roulette</title>
-  <script type='text/javascript' src='assets/scripts/movieController.js'></script>
+  <script type='text/javascript' src='../assets/scripts/movieController.js'></script>
 </head>
 
 <body>
@@ -19,5 +19,16 @@
     <a href="index.html">Filter</a>
     <a href="../about/index.html">About</a>
   </div>
-  Filter
+  <div id="MovieOutput" class="MovieShowcase">
+  </div>
+  <div id="filterBox">
+    <h3> Find a Movie </h3><br>
+    <form>
+      from
+      <input type="text" name="releaseYearBegin" id="releaseYearBegin" value="1900" style="width: 60px;"> to
+      <input type="text" name="releaseYearEnd" id="releaseYearEnd" value="2017" style="width: 60px;"><br><br> with a rating higher than <input type="text" name="rating" id="rating" value="0" style="width: 30px;"><br><br> include adult movies?
+      <input type="checkbox" id="adultBool" value="true"> <br><br>
+      <input type="button" value="Search" onclick="filterMovies(); ">
+    </form>
+  </div>
 </body>
