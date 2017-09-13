@@ -1,4 +1,5 @@
 var totalPages;
+var baseURL;
 
 function sendRequest(reqURL) {
   var tag = document.createElement("script");
@@ -20,21 +21,41 @@ function getFullDetails(response) {
   var movieDetails = response.results[movieIndex];
   var movieID = movieDetails.id;
   var getFullMovieURL = "https://api.themoviedb.org/3/movie/" + movieID + "?api_key=afe4e10abbb804e2b4a4f8a3ef067ad5&language=en-US&callback=displayMovie";
+  document.getElementById("MovieOutput").innerHTML = "";
+  document.getElementById("searchButton").style.display = "none";
   sendRequest(getFullMovieURL);
 
 }
 
+//Refactor filter and total page sometimes
 function getRandomMovie() {
   var pageIndex = Math.floor((Math.random() * totalPages) + 1);
   var getMovieURL = 'https://api.themoviedb.org/3/discover/movie?api_key=afe4e10abbb804e2b4a4f8a3ef067ad5&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=' + pageIndex + '&vote_count.gte=100&with_runtime.gte=30&callback=getFullDetails';
   sendRequest(getMovieURL);
 }
 
+
+function getFilterPages(response) {
+  var filterTotalPages = response.total_pages;
+  var pageIndex = Math.floor((Math.random() * totalPages) + 1);
+  baseFilterURL = baseFilterURL + '&page=' + pageIndex + '&callback=get'
+}
+
+function filterMovies() {
+  var releaseYearBegin = document.getElementById("releaseYearBegin").value;
+  var releaseYearEnd = document.getElementById("releaseYearEnd").value;
+  var rating = document.getElementById("rating").value / 10;
+  var adultBool = document.getElementById("adultBool").checked;
+  baseURL = 'https://api.themoviedb.org/3/discover/movie?api_key=afe4e10abbb804e2b4a4f8a3ef067ad5&language=en-US&sort_by=popularity.desc&include_adult=' +
+    adultBool + '&include_video=false&page=1&primary_release_date.gte=' + releaseYearBegin + '&primary_release_date.lte=' + releaseYearEnd + '&vote_average.gte=' + rating;
+  baseFilterURL = baseURL + '&callback=getFilterPages';
+  document.getElementById("filterBox").innerHTML = "";
+  sendRequest(baseFilterURL);
+}
+
 //I really don't like this function
 function displayMovie(response) {
   var movieDetails = response;
-  document.getElementById("MovieOutput").innerHTML = "";
-  document.getElementById("searchButton").style.display = "none";
   var image = document.createElement("img");
   var poster = "https://image.tmdb.org/t/p/w640" + movieDetails.poster_path;
   image.setAttribute("height", "540");
@@ -53,8 +74,8 @@ function displayMovie(response) {
     var releaseDateString = "<i>Release Date: " + movieDetails.release_date + "<br></i>";
     document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = releaseDateString;
   }
-var runtimeString = "Runtime: " + movieDetails.runtime + " Minutes";
-document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = runtimeString;
+  var runtimeString = "Runtime: " + movieDetails.runtime + " Minutes";
+  document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = runtimeString;
   document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = "<br>";
   document.getElementById('MovieOutput').innerHTML += document.getElementById('MovieOutput').innerHTML = "<a href='#' onclick='getRandomMovie();'> Another?</a> | <a href='" + tmdburl + "'>" + "TheMovieDB </a>";
 }
