@@ -1,5 +1,5 @@
 html {
-  background: url("../images/city.jpg") no-repeat center   center fixed;
+  background: url("../images/city.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,7 +14,7 @@ html {
 /* Add a black background color to the top navigation */
 
 .topnavmainmain {
-  background-color: blue;
+  margin-left: 40%;
   overflow: hidden;
 }
 
@@ -22,8 +22,8 @@ html {
 /* Style the links inside the navigation bar */
 
 .topnavmain a {
+  background: linear-gradient( rgba(94, 94, 94, 0.6), rgba(94, 94, 94, 0.7));
   float: left;
-  display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -74,6 +74,7 @@ html {
 }
 
 #searchButton a {
+  background: linear-gradient( rgba(178, 178, 178, 0.6), rgba(178, 178, 178, 0.7));
   font-size: 72px;
   color: #f2f2f2;
   display: block;
