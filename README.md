@@ -5,4 +5,4 @@ This website helps you while getting a random movie from [The movie DB](https://
 
 # Example result
 
-![result](/assets/images/screen.png?raw=true "Result")
+![result](/assets/images/screenshot.png?raw=true "Result")
