@@ -48,10 +48,12 @@ html {
 }
 
 .MovieShowcase {
+  text-align: center;
   font-size: 17px;
+  display: block;
   margin: auto;
   position: absolute;
-  margin-left: 30%;
+  margin-left: 40%;
   margin-top: 5%;
   border: 2px solid white;
   width: 20%;
